@@ -1,9 +1,4 @@
 # Переменные для первой ВМ (web)
-variable "vm_web_name" {
-  description = "Name VM"
-  type        = string
-  default     = "netology-develop-platform-web"
-}
 
 variable "vm_web_platform_id" {
   description = "Platform ID"
@@ -61,11 +56,6 @@ variable "vm_web_image_family" {
 
 
 # Переменные для второй ВМ (db)
-variable "vm_db_name" {
-  description = "Name of the DB VM"
-  type        = string
-  default     = "netology-develop-platform-db"
-}
 
 variable "vm_db_platform_id" {
   description = "Platform ID for the DB VM"
@@ -125,4 +115,30 @@ variable "vm_db_zone" {
   description = "zone b"
   type        = string
   default     = "ru-central1-b"
+}
+
+# меняем название вм через не сколько переменных
+
+variable "prefix" {
+  description = "Prefix for instance names"
+  type        = string
+  default     = "netology"
+}
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+  default     = "develop"
+}
+
+variable "vm_web_role" {
+  description = "Role suffix for web instance"
+  type        = string
+  default     = "platform-web"
+}
+
+variable "vm_db_role" {
+  description = "Role suffix for DB instance"
+  type        = string
+  default     = "platform-db"
 }
